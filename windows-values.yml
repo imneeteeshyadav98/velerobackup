@@ -1,0 +1,13 @@
+schedules:
+  windowsbackup:
+    disabled: false
+    labels:
+      myenv: veleronamespace
+    annotations:
+      myenv: veleronamespace
+    schedule: " 20 17 * * * "
+    useOwnerReferencesInBackup: true
+    template:
+      ttl: "240h"
+      includedNamespaces:
+      - windowsnamespace
